@@ -38,14 +38,25 @@
 
     { "keys": ["ctrl+i"], "command": "indent_and_braces" },
 
+    { "keys": ["escape"], "command": "clear_selections", "context":
+        [
+            { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false},
+        ]
+    },
+    { "keys": ["escape"], "command": "single_selection", "context": 
+        [
+            { "key": "num_selections", "operator": "not_equal", "operand": 1},
+        ]
+    },
     { "keys" : ["escape"], "command" : "show_panel" , "args" : {"panel": "output.exec"},"context":
         [
-            { "key": "panel_visible", "operator": "equal", "operand": false }
+            { "key": "panel_visible", "operator": "equal", "operand": false },
+            { "key": "auto_complete_visible", "operator": "equal", "operand": false },
         ]
     },
     { "keys" : ["escape"], "command" : "hide_panel" , "args" : {"panel": "output.exec"},"context":
         [
-            { "key": "panel_visible", "operator": "equal", "operand": true }
+            { "key": "panel_visible", "operator": "equal", "operand": true },
         ]
     },
 
