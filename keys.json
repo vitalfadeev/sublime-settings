@@ -52,6 +52,7 @@
         [
             { "key": "panel_visible", "operator": "equal", "operand": false },
             { "key": "auto_complete_visible", "operator": "equal", "operand": false },
+            { "key": "num_selections", "operator": "equal", "operand": 1},
         ]
     },
     { "keys" : ["escape"], "command" : "hide_panel" , "args" : {"panel": "output.exec"},"context":
