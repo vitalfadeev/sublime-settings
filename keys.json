@@ -38,6 +38,21 @@
 
     { "keys": ["ctrl+i"], "command": "indent_and_braces" },
 
+    { "keys": ["escape"], "command": "clear_fields", "context":
+        [
+            { "key": "has_next_field", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["escape"], "command": "clear_fields", "context":
+        [
+            { "key": "has_prev_field", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["escape"], "command": "hide_auto_complete", "context":
+        [
+            { "key": "auto_complete_visible", "operator": "equal", "operand": true }
+        ]
+    },
     { "keys": ["escape"], "command": "clear_selections", "context":
         [
             { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": false},
@@ -48,11 +63,22 @@
             { "key": "num_selections", "operator": "not_equal", "operand": 1},
         ]
     },
+    { "keys": ["escape"], "command": "hide_overlay", "context":
+        [
+            { "key": "overlay_visible", "operator": "equal", "operand": true }
+        ]
+    },
+    { "keys": ["escape"], "command": "hide_popup", "context":
+        [
+            { "key": "popup_visible", "operator": "equal", "operand": true }
+        ]
+    },
     { "keys" : ["escape"], "command" : "show_panel" , "args" : {"panel": "output.exec"},"context":
         [
             { "key": "panel_visible", "operator": "equal", "operand": false },
             { "key": "auto_complete_visible", "operator": "equal", "operand": false },
             { "key": "num_selections", "operator": "equal", "operand": 1},
+            { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
         ]
     },
     { "keys" : ["escape"], "command" : "hide_panel" , "args" : {"panel": "output.exec"},"context":
